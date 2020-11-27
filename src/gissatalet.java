@@ -4,7 +4,7 @@ import java.awt.*;
 public class gissatalet {
     public static void main(String[] args) {
         double svar1;
-        int svar2;
+        int svar2 = 1;
         svar1 =  Math.random()*100;
         svar2 = (int) svar1;
         boolean k = true;
@@ -29,48 +29,63 @@ public class gissatalet {
             e.printStackTrace();
         }
         while (k ) {
-            while (i) {
-                c = false;
+            System.out.print("a");
+
+            System.out.print("h");
+            int noo = 0;
+            noo++;
+            if (noo > 100) {
+                System.exit(0);
+            }
+
+            if (gis == svar2) {
+                System.out.print("g");
+                    if (agis == 0) {
+                        svar = "Gratis du gisade rett på första försöket!!";
+                        y = false;
+                        k = false;
+                        break;
+                    }
+                    agis++;
+                    k = false;
+                    System.out.print("y");
+
+            }else if (gis < svar2) {
+                nedre = gis;
+                agis++;
+                System.out.print(3);
+                gis = -1000;
+            }else if (gis > svar2) {
+                upppre = gis;
+                agis++;
+                System.out.print(4);
+                gis = 1000;
+            }else {
+                fgis++;
+                JOptionPane.showMessageDialog(null, "du gisade på ett tal som inte är giltigt");
+            }
+            i =false;
+            System.out.print("jj");
+            while (i = false) {
+                System.out.print("L");
+                i = true;
                 try {
-                    gis = Integer.parseInt(JOptionPane.showInputDialog(text));
+                    gis = Integer.parseInt(JOptionPane.showInputDialog("Gisa på ett tall mellen " + nedre + " och " + upppre));
                 } catch (NumberFormatException e) {
-                     c = true;
+                    i = false;
                     fgis++;
                     JOptionPane.showMessageDialog(null,"du gisade fell försök i gen!" + "\nmåste vara ett hel tal");
                 } catch (HeadlessException e) {
                     e.printStackTrace();
                 }
-
-                    break;
-                if (c = false) {
-                    i = false;
-                }
+                System.out.println("h " + svar2 + gis);
             }
-
-            if (gis == svar2) {
-                switch (agis) {
-                    case 0:
-                        svar = "Gratis du gisade rett på första försöket!!";
-                        y = false;
-                        break;
-                    default:
-                        agis++;
-                        k = false;
-                        break;
-                }
-            }else if (gis < svar2) {
-                nedre = gis;
-                agis++;
-            }else if (gis > svar2) {
-                upppre = gis;
-                agis++;
-            }else {
-                fgis++;
-                JOptionPane.showMessageDialog(null, "du gisade på ett tal som inte är giltigt");
-            }
+            System.out.println(gis + " " + svar2);
         }
-        if (fgis < 5) {y = false;}
-        if (y = true) {
+        if (fgis > 5) {
+            y = false;
+        }
+        if (y) {
             svar = svar + "\ndu gisade fell " + fgis + " gånger";
         }
         JOptionPane.showMessageDialog(null, svar);
